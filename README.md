@@ -22,14 +22,12 @@ $ git clone https://github.com/raffaeleflorio/luks-2fa-dracut.git
 ```
 You can check commit's signatures using my key: [from raffaeleflorio.github.io](https://raffaeleflorio.github.io/resources/pgp.asc) or [from pgp.mit.edu](https://pgp.mit.edu/pks/lookup?op=get&search=0x0deff00a47cf317f).
 
-<br/>
 Install, a new initramfs will be created with `dracut -fv`:
 
 ```
 # make install
 ```
 
-<br/>
 Then you need to add your `rd.luks.2fa` to the kernel cmdline through the bootloader file. For example `/etc/default/grub` if you use GRUB.
 
 ### Removal
