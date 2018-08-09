@@ -24,15 +24,17 @@ You can check commit's signatures using my key: [from raffaeleflorio.github.io](
 
 <br/>
 Install, a new initramfs will be created with `dracut -fv`:
+
 ```
 # make install
 ```
 
 <br/>
-Then customize your kernel cmdline through the bootloader file. For example /etc/default/grub if you use GRUB.
+Then you need to add your `rd.luks.2fa` to the kernel cmdline through the bootloader file. For example `/etc/default/grub` if you use GRUB.
 
 ### Removal
-A new initramfs will be created with `dracut -fv`.
+A new initramfs will be created with `dracut -fv`:
+
 ```
 # make clean
 ```
