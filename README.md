@@ -1,12 +1,12 @@
 # luks-2fa-dracut
 
-This module for dracut allows 2FA on LUKS during boot. It uses systemd (enabled by default in dracut) and a second LUKS volume. Obviously the latter should be on a removable device (e.g. a SD card).
+This module for dracut allows 2FA on LUKS during boot. It doesn't use YubiKey and it doesn't require any special media. Instead it uses a second LUKS volume and it requires systemd (used by default in dracut). Obviously the second LUKS volume should be on a removable device (e.g. a SD card) and it should kept secret to nullify password recorder and shoulder surfer attacks.
+<br/>
+So, with this setup, an attacker needs a copy of the second volume and its password to unlock the target volume. Unlike vanilla LUKS setup that is vulnerable to the aforesaid attacks.
 
 ## How it works ?
 
-A target LUKS volume will be opened when the user provides a password for another LUKS volume on which there is a key for the first volume. So the user provides "something that posssses" (e.g. an SD card) and "something that knows" (i.e. the password to unlock the SD card volume). In this way, excluding physical attacks, an attacker needs a copy of the second volume and its password to unlock the target volume.
-<br/>
-Unlike a vanilla LUKS setup, you're protected from shoulder surfer and password recorder (if the keyfile volume is kept secret).
+A target LUKS volume will be opened when the user provides a password for another LUKS volume on which there is a key for the first volume. So the user provides "something that posssses" (e.g. an SD card) and "something that knows" (i.e. the password to unlock the SD card volume).
 <br/>
 The relation between the target volume and the keyfile volume is specified with a kernel cmdline parameter:
 ```
