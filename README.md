@@ -1,8 +1,8 @@
 # luks-2fa-dracut
 
-This module for dracut allows 2FA on LUKS during boot. It doesn't use YubiKey and it doesn't require any special media. Instead it uses a second LUKS volume and it requires systemd (used by default in dracut). Obviously the second LUKS volume should be on a removable device (e.g. a SD card) and it should kept secret to nullify password recorder and shoulder surfer attacks.
+This module for dracut allows 2FA on LUKS during boot. It doesn't use YubiKey and it doesn't require any special media. All you need is a second LUKS volume. Obviously the latter should be on a removable device (e.g. a SD card) and it should be kept secure to nullify password recorder or shoulder surfer attacks and subsequent clone/steal of the target device/computer.
 <br/>
-So, with this setup, an attacker needs a copy of the second volume and its password to unlock the target volume. Unlike vanilla LUKS setup that is vulnerable to the aforesaid attacks.
+However this module, like YubiKey, doesn't protect you from physical attack. About this, another layer is needed (for info: https://blog.invisiblethings.org/2011/09/07/anti-evil-maid.html). Anyway, in case of emergency, it's easier to destroy the SD card than the drive on your motherboard...
 
 ## How it works ?
 
