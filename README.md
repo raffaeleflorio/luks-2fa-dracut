@@ -6,7 +6,7 @@ So, with this setup, an attacker needs a copy of the second volume and its passw
 
 ## How it works ?
 
-A target LUKS volume will be opened when the user provides a password for another LUKS volume on which there is a key for the first volume. So the user provides "something that posssses" (e.g. an SD card) and "something that knows" (i.e. the password to unlock the SD card volume).
+A target LUKS volume will be opened when the user provides a password for another LUKS volume on which there is a key for the first volume. So the user provides "something that has" (e.g. an SD card) and "something that knows" (i.e. the password to unlock the SD card volume).
 <br/>
 The relation between the target volume and the keyfile volume is specified with a kernel cmdline parameter:
 ```
