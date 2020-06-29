@@ -39,4 +39,4 @@ A new initramfs will be created with `dracut -fv`:
 
 # SD driver
 
-If you want use SD you should add the `mmc_block` drivers to the initramfs. You can achieve it with the addition of: `add_drivers+=" mmc_block "` to `/etc/dracut.conf.d/99-luks.2fa`
+If you want use SD you should add the `mmc_block` drivers to the initramfs. You can achieve it with the addition of: `add_drivers+=" mmc_block "` to `/etc/dracut.conf.d/luks-2fa.conf`.
